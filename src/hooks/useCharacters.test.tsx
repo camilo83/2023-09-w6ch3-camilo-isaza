@@ -3,17 +3,12 @@ import '@testing-library/jest-dom';
 import { useEffect } from 'react';
 import { ApiRepo } from '../services/api.repo';
 import { useCharacters } from '../hooks/useCharacters';
-import { AnyCharacter } from '../models/character';
+import { AnyCharacter, Character } from '../models/character';
 import { userEvent } from '@testing-library/user-event';
 import { store } from '../store/store';
 import { Provider } from 'react-redux';
 
-jest.mock('react', () => ({
-  ...jest.requireActual('react'),
-  useReducer: jest.fn().mockReturnValue([{}, jest.fn()]),
-}));
-
-describe('Given the useTask hook', () => {
+describe('Given the useCharacters hook', () => {
   ApiRepo.prototype.getCharacters = jest
     .fn()
     .mockResolvedValue([{ id: 34 } as unknown as AnyCharacter]);
@@ -30,7 +25,9 @@ describe('Given the useTask hook', () => {
         return (
           <>
             <h1>Test Component</h1>
-            <button onClick={() => updateCharacter(1, { name: 'enano' })}>
+            <button
+              onClick={() => updateCharacter(1, { name: 'enano' } as Character)}
+            >
               Update
             </button>
           </>
