@@ -31,12 +31,8 @@ export function Card({ character }: Props) {
       return <li>Años de reinado: {item.reignYears}</li>;
     } else if ('weapon' in item) {
       return <li>Arma: {item.weapon}</li>;
-      // } else if ('skillLevel' in item) {
-      //   return <li>Destreza: {item.skillLevel}</li>
     } else if ('adviseTo' in item) {
       return <li>Sirve a: {item.adviseTo.name}</li>;
-      // } else if  ('servilityGrade' in item) {
-      //   return <li>Peloteo: {item.servilityGrade}</li>
     } else if ('servesTo' in item) {
       return <li>Asesora a: {item.servesTo.name}</li>;
     }
