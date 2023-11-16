@@ -15,9 +15,9 @@ describe('Given...', () => {
       isAlive: true,
       category: 'fighter',
       reignYears: 5,
-      weapon: 'Sword', // Añade datos específicos para las líneas faltantes
-      adviseTo: { name: 'King' }, // Añade datos específicos para las líneas faltantes
-      servesTo: { name: 'Queen' }, // Añade datos específicos para las líneas faltantes
+      weapon: 'Sword',
+      adviseTo: { name: 'King' },
+      servesTo: { name: 'Queen' },
     };
 
     render(
@@ -30,11 +30,9 @@ describe('Given...', () => {
       const element = screen.getByText('bronn Some Family');
       expect(element).toBeInTheDocument();
 
-      // Verifica que la imagen tenga el atributo alt correcto
       const image = screen.getByAltText('bronn Some Family');
       expect(image).toBeInTheDocument();
 
-      // Verifica que los datos adicionales estén presentes en la lista
       const ageElement = screen.getByText('Edad: 30 años');
       expect(ageElement).toBeInTheDocument();
 
