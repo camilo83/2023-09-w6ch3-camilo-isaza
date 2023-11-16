@@ -26,9 +26,8 @@ describe('Given...', () => {
     const mockUseCharacters = useCharacters as jest.Mock;
     const loadCharacters = jest.fn();
 
-    // Simula el comportamiento del gancho useCharacters
     mockUseCharacters.mockReturnValue({
-      characters: [{ id: 1, name: 'Character 1' } as AnyCharacter], // Define los datos esperados
+      characters: [{ id: 1, name: 'Character 1' } as AnyCharacter],
       loadCharacters,
     });
 
